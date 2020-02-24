@@ -7,21 +7,33 @@ var shopLocation1 = {
     minCustomer: 23,
     maxCustomer: 65,
     Avg: 6.3,
-    customerNum: 0,
     cookiesAvg: 0,
-    //counter: 0,
     customer: [],
-
-
-    cookiesRandom: function () {
+    cookies: [],
+    sum: 0,
+    avgCustomer1: function () {
         for (var i = 0; i < hours.length; i++) {
-            this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
-            this.cookiesAvg = Math.floor(this.customerNum * this.Avg);
-            //this.counter = this.counter + this.cookiesAvg;
-            //this.customer[i] = this.cookiesAvg;
-            this.customer[i]= this.cookiesAvg;
+            this.customer.push(Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer);
         }
     },
+
+    cookiesRandom: function () {
+        for (var j = 0; j < hours.length; j++) {
+            this.cookies.push(Math.floor(this.customer[j] * this.Avg));
+
+        }
+    },
+    
+    cookiesS: function () {
+        var sumation = 0;
+        for (var i = 0; i < this.cookies.length; i++) {
+            sumation = sumation + this.cookies[i];
+
+        }
+        this.sum = sumation;
+    },
+
+
 
     render: function () {
         var container = document.getElementById('sales');
@@ -35,26 +47,23 @@ var shopLocation1 = {
         for (var i = 0; i < hours.length; i++) {
             var liE1 = document.createElement('li');
             ulE1.appendChild(liE1);
-            liE1.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
+            liE1.textContent = `${hours[i]}: ${this.cookies[i]} cookies`;
 
 
         }
-        var total = 0;
-        for (var j = 0; i < this.customer[j]; j++) {
-            //var total=  this.counter+ this.customer[j];
-            total = Math.floor(total + this.customer[j]);
-            liE1.textContent = `Total:${total}cookies`;
-        }
-
-
+        liE1.textContent = `Total: ${this.sum} cookies`;
+        console.log(container);
     }
+
+
 }
 
 
 
 
-shopLocation1.cookiesRandom(23, 65);
+shopLocation1.avgCustomer1();
 shopLocation1.cookiesRandom();
+shopLocation1.cookiesS();
 shopLocation1.render();
 console.log(shopLocation1);
 
@@ -64,21 +73,34 @@ var shopLocation2 = {
     minCustomer: 3,
     maxCustomer: 24,
     Avg: 1.2,
-    customerNum: 0,
     cookiesAvg: 0,
-    counter: 0,
     customer: [],
+    cookies: [],
+    sum: 0,
+    avgCustomer1: function () {
+        for (var i = 0; i < hours.length; i++) {
+            this.customer.push(Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer);
+        }
+    },
 
     cookiesRandom: function () {
-        for (var i = 0; i < hours.length; i++) {
-            this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
-            this.cookiesAvg = Math.floor(this.customerNum * this.Avg);
-            this.counter = this.counter + this.cookiesAvg;
-            this.customer[i] = this.cookiesAvg;
+        for (var j = 0; j < hours.length; j++) {
+            this.cookies.push(Math.floor(this.customer[j] * this.Avg));
 
         }
-
     },
+    
+    cookiesS: function () {
+        var sumation = 0;
+        for (var i = 0; i < this.cookies.length; i++) {
+            sumation = sumation + this.cookies[i];
+
+        }
+        this.sum = sumation;
+    },
+
+
+
     render: function () {
         var container = document.getElementById('sales');
         var articleE1 = document.createElement('article');
@@ -91,21 +113,26 @@ var shopLocation2 = {
         for (var i = 0; i < hours.length; i++) {
             var liE1 = document.createElement('li');
             ulE1.appendChild(liE1);
-            liE1.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
+            liE1.textContent = `${hours[i]}: ${this.cookies[i]} cookies`;
+
+
         }
-        var total = 0;
-        for (var j = 0; i < this.customer[j]; j++) {
-            //var total=  this.counter+ this.customer[j];
-            total = total + this.customer[j];
-            liE1.textContent = `Total:${total}cookies`;
-        }
+        liE1.textContent = `Total: ${this.sum} cookies`;
+        console.log(container);
     }
 
+
 }
-shopLocation2.cookiesRandom(3, 24);
+
+
+
+
+shopLocation2.avgCustomer1();
 shopLocation2.cookiesRandom();
+shopLocation2.cookiesS();
 shopLocation2.render();
 console.log(shopLocation2);
+
 //////////////////////////////////////////////////////////////////////////////
 
 var shopLocation3 = {
@@ -113,21 +140,34 @@ var shopLocation3 = {
     minCustomer: 11,
     maxCustomer: 38,
     Avg: 3.7,
-    customerNum: 0,
     cookiesAvg: 0,
-    counter: 0,
     customer: [],
+    cookies: [],
+    sum: 0,
+    avgCustomer1: function () {
+        for (var i = 0; i < hours.length; i++) {
+            this.customer.push(Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer);
+        }
+    },
 
     cookiesRandom: function () {
-        for (var i = 0; i < hours.length; i++) {
-            this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
-            this.cookiesAvg = Math.floor(this.customerNum * this.Avg);
-            this.counter = this.counter + this.cookiesAvg;
-            this.customer[i] = this.cookiesAvg;
+        for (var j = 0; j < hours.length; j++) {
+            this.cookies.push(Math.floor(this.customer[j] * this.Avg));
 
         }
-
     },
+    
+    cookiesS: function () {
+        var sumation = 0;
+        for (var i = 0; i < this.cookies.length; i++) {
+            sumation = sumation + this.cookies[i];
+
+        }
+        this.sum = sumation;
+    },
+
+
+
     render: function () {
         var container = document.getElementById('sales');
         var articleE1 = document.createElement('article');
@@ -140,21 +180,26 @@ var shopLocation3 = {
         for (var i = 0; i < hours.length; i++) {
             var liE1 = document.createElement('li');
             ulE1.appendChild(liE1);
-            liE1.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
+            liE1.textContent = `${hours[i]}: ${this.cookies[i]} cookies`;
+
+
         }
-        var total = 0;
-        for (var j = 0; i < this.customer[j]; j++) {
-            //var total=  this.counter+ this.customer[j];
-            total = total + this.customer[j];
-            liE1.textContent = `Total:${total}cookies`;
-        }
+        liE1.textContent = `Total: ${this.sum} cookies`;
+        console.log(container);
     }
 
+
 }
-shopLocation3.cookiesRandom(11, 38);
+
+
+
+
+shopLocation3.avgCustomer1();
 shopLocation3.cookiesRandom();
+shopLocation3.cookiesS();
 shopLocation3.render();
 console.log(shopLocation3);
+
 //////////////////////////////////////////////////////
 
 var shopLocation4 = {
@@ -162,21 +207,34 @@ var shopLocation4 = {
     minCustomer: 20,
     maxCustomer: 38,
     Avg: 2.3,
-    customerNum: 0,
     cookiesAvg: 0,
-    counter: 0,
     customer: [],
+    cookies: [],
+    sum: 0,
+    avgCustomer1: function () {
+        for (var i = 0; i < hours.length; i++) {
+            this.customer.push(Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer);
+        }
+    },
 
     cookiesRandom: function () {
-        for (var i = 0; i < hours.length; i++) {
-            this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
-            this.cookiesAvg = Math.floor(this.customerNum * this.Avg);
-            this.counter = this.counter + this.cookiesAvg;
-            this.customer[i] = this.cookiesAvg;
+        for (var j = 0; j < hours.length; j++) {
+            this.cookies.push(Math.floor(this.customer[j] * this.Avg));
 
         }
-
     },
+    
+    cookiesS: function () {
+        var sumation = 0;
+        for (var i = 0; i < this.cookies.length; i++) {
+            sumation = sumation + this.cookies[i];
+
+        }
+        this.sum = sumation;
+    },
+
+
+
     render: function () {
         var container = document.getElementById('sales');
         var articleE1 = document.createElement('article');
@@ -189,20 +247,26 @@ var shopLocation4 = {
         for (var i = 0; i < hours.length; i++) {
             var liE1 = document.createElement('li');
             ulE1.appendChild(liE1);
-            liE1.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
-        } var total = 0;
-        for (var j = 0; i < this.customer[j]; j++) {
-            //var total=  this.counter+ this.customer[j];
-            total = total + this.customer[j];
-            liE1.textContent = `Total:${total}cookies`;
+            liE1.textContent = `${hours[i]}: ${this.cookies[i]} cookies`;
+
+
         }
+        liE1.textContent = `Total: ${this.sum} cookies`;
+        console.log(container);
     }
 
+
 }
-shopLocation4.cookiesRandom(20, 38);
+
+
+
+
+shopLocation4.avgCustomer1();
 shopLocation4.cookiesRandom();
+shopLocation4.cookiesS();
 shopLocation4.render();
 console.log(shopLocation4);
+
 
 
 /////////////////////////////////////////////////
@@ -212,21 +276,34 @@ var shopLocation5 = {
     minCustomer: 2,
     maxCustomer: 16,
     Avg: 4.6,
-    customerNum: 0,
     cookiesAvg: 0,
-    counter: 0,
     customer: [],
+    cookies: [],
+    sum: 0,
+    avgCustomer1: function () {
+        for (var i = 0; i < hours.length; i++) {
+            this.customer.push(Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer);
+        }
+    },
 
     cookiesRandom: function () {
-        for (var i = 0; i < hours.length; i++) {
-            this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
-            this.cookiesAvg = Math.floor(this.customerNum * this.Avg);
-            this.counter = this.counter + this.cookiesAvg;
-            this.customer[i] = this.cookiesAvg;
+        for (var j = 0; j < hours.length; j++) {
+            this.cookies.push(Math.floor(this.customer[j] * this.Avg));
 
         }
-
     },
+    
+    cookiesS: function () {
+        var sumation = 0;
+        for (var i = 0; i < this.cookies.length; i++) {
+            sumation = sumation + this.cookies[i];
+
+        }
+        this.sum = sumation;
+    },
+
+
+
     render: function () {
         var container = document.getElementById('sales');
         var articleE1 = document.createElement('article');
@@ -239,21 +316,26 @@ var shopLocation5 = {
         for (var i = 0; i < hours.length; i++) {
             var liE1 = document.createElement('li');
             ulE1.appendChild(liE1);
-            liE1.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
+            liE1.textContent = `${hours[i]}: ${this.cookies[i]} cookies`;
+
+
         }
-        var total = 0;
-        for (var j = 0; i < this.customer[j]; j++) {
-            //var total=  this.counter+ this.customer[j];
-            total = total + this.customer[j];
-            liE1.textContent = `Total:${total}cookies`;
-        }
+        liE1.textContent = `Total: ${this.sum} cookies`;
+        console.log(container);
     }
 
+
 }
-shopLocation5.cookiesRandom(2, 16);
+
+
+
+
+shopLocation5.avgCustomer1();
 shopLocation5.cookiesRandom();
+shopLocation5.cookiesS();
 shopLocation5.render();
 console.log(shopLocation5);
+
 
 ///////////////////////////////////
 
