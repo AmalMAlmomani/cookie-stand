@@ -9,18 +9,18 @@ var shopLocation1 = {
     Avg: 6.3,
     customerNum: 0,
     cookiesAvg: 0,
-    counter: 0,
+    //counter: 0,
     customer: [],
+
 
     cookiesRandom: function () {
         for (var i = 0; i < hours.length; i++) {
             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
             this.cookiesAvg = Math.floor(this.customerNum * this.Avg);
-            this.counter = this.counter + this.cookiesAvg;
-            this.customer[i] = this.cookiesAvg;
-
+            //this.counter = this.counter + this.cookiesAvg;
+            //this.customer[i] = this.cookiesAvg;
+            this.customer[i]= this.cookiesAvg;
         }
-
     },
 
     render: function () {
@@ -32,19 +32,21 @@ var shopLocation1 = {
         h2E1.textContent = this.location;
         var ulE1 = document.createElement('ul');
         h2E1.appendChild(ulE1);
-       for (var i = 0; i < hours.length ; i++) {
+        for (var i = 0; i < hours.length; i++) {
             var liE1 = document.createElement('li');
             ulE1.appendChild(liE1);
             liE1.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
-          
-           
+
+
         }
-         for(var j = 0 ; j< hours.length ; j++){
-               var total=  this.counter+ this.customer[j];
-              liE1.textContent = `Total:${total}cookies`; 
-           }
-         
-         
+        var total = 0;
+        for (var j = 0; i < this.customer[j]; j++) {
+            //var total=  this.counter+ this.customer[j];
+            total = Math.floor(total + this.customer[j]);
+            liE1.textContent = `Total:${total}cookies`;
+        }
+
+
     }
 }
 
@@ -86,12 +88,17 @@ var shopLocation2 = {
         h2E1.textContent = this.location;
         var ulE1 = document.createElement('ul');
         h2E1.appendChild(ulE1);
-       for (var i = 0; i < hours.length ; i++) {
+        for (var i = 0; i < hours.length; i++) {
             var liE1 = document.createElement('li');
             ulE1.appendChild(liE1);
             liE1.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
         }
-        
+        var total = 0;
+        for (var j = 0; i < this.customer[j]; j++) {
+            //var total=  this.counter+ this.customer[j];
+            total = total + this.customer[j];
+            liE1.textContent = `Total:${total}cookies`;
+        }
     }
 
 }
@@ -130,12 +137,17 @@ var shopLocation3 = {
         h2E1.textContent = this.location;
         var ulE1 = document.createElement('ul');
         h2E1.appendChild(ulE1);
-       for (var i = 0; i < hours.length ; i++) {
+        for (var i = 0; i < hours.length; i++) {
             var liE1 = document.createElement('li');
             ulE1.appendChild(liE1);
             liE1.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
         }
-        
+        var total = 0;
+        for (var j = 0; i < this.customer[j]; j++) {
+            //var total=  this.counter+ this.customer[j];
+            total = total + this.customer[j];
+            liE1.textContent = `Total:${total}cookies`;
+        }
     }
 
 }
@@ -174,12 +186,16 @@ var shopLocation4 = {
         h2E1.textContent = this.location;
         var ulE1 = document.createElement('ul');
         h2E1.appendChild(ulE1);
-       for (var i = 0; i < hours.length ; i++) {
+        for (var i = 0; i < hours.length; i++) {
             var liE1 = document.createElement('li');
             ulE1.appendChild(liE1);
             liE1.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
+        } var total = 0;
+        for (var j = 0; i < this.customer[j]; j++) {
+            //var total=  this.counter+ this.customer[j];
+            total = total + this.customer[j];
+            liE1.textContent = `Total:${total}cookies`;
         }
-        
     }
 
 }
@@ -220,12 +236,17 @@ var shopLocation5 = {
         h2E1.textContent = this.location;
         var ulE1 = document.createElement('ul');
         h2E1.appendChild(ulE1);
-       for (var i = 0; i < hours.length ; i++) {
+        for (var i = 0; i < hours.length; i++) {
             var liE1 = document.createElement('li');
             ulE1.appendChild(liE1);
             liE1.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
         }
-        
+        var total = 0;
+        for (var j = 0; i < this.customer[j]; j++) {
+            //var total=  this.counter+ this.customer[j];
+            total = total + this.customer[j];
+            liE1.textContent = `Total:${total}cookies`;
+        }
     }
 
 }
