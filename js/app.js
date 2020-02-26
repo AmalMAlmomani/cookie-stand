@@ -3,7 +3,7 @@
 var hours = ['6:00am', '7:00am', ' 8:00am ', ' 9:00am ', ' 10:00am ', ' 11:00am ', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 var shops = [];
 
-function Shop(location, minCustomer, maxCustomer, Avg, customer, cookies, sum) {
+function Shop(location, minCustomer, maxCustomer, Avg) {
     this.location = location;
     this.minCustomer = minCustomer;
     this.maxCustomer = maxCustomer;
@@ -12,6 +12,7 @@ function Shop(location, minCustomer, maxCustomer, Avg, customer, cookies, sum) {
     this.cookies = [];
     this.sum = 0;
     shops.push(this);
+    
 
 }
 
@@ -57,17 +58,25 @@ Shop.prototype.render = function () {
     tableE1.appendChild(trE1);
     var thE1 = document.createElement('th');
     trE1.appendChild(thE1);
-    //thE1.textContent = this.location;
-
+    //thE1.textContent = myShop.ShopObj;
+    // var trE5 = document.createElement('tr');
+    // tableE1.appendChild(trE5);
+    // var tdE7 = document.createElement('td');
+    // trE5.appendChild(tdE7);
+    // tdE7.textContent = `${myShop.ShopObj}`;
 }
 
 function TableData() {
+
     for (var d = 0; d < shops.length; d++) {
         var trE3 = document.createElement('tr');
         tableE1.appendChild(trE3);
         var tdE1 = document.createElement('td');
         tableE1.appendChild(tdE1);
         tdE1.textContent = shops[d].location;
+        /////////////
+
+
 
         for (var c = 0; c < hours.length; c++) {
             var tdE2 = document.createElement('td');
@@ -106,6 +115,7 @@ function TableHeader() {
 
 }
 
+
 function TableFooter() {
     var trE3 = document.createElement('tr');
     tableE1.appendChild(trE3);
@@ -113,6 +123,25 @@ function TableFooter() {
     trE3.appendChild(tdE4);
     tdE4.textContent = 'Totals';
     tableE1.appendChild(trE3);
+
+    ///////////////////////
+
+
+
+    // var trE5 = document.createElement('tr');
+    // tableE1.appendChild(trE5);
+    // var tdE7 = document.createElement('td');
+    // trE5.appendChild(tdE7);
+    // tdE7.textContent = `${Object.shop6}`;
+
+
+    ////////////////////////////////////////////////
+
+
+
+
+    /////////////////////
+
     var y = 0;
     var result = 0;
     for (var f = 0; f < hours.length; f++) {
@@ -121,12 +150,14 @@ function TableFooter() {
         var n = 0;
         for (var s = 0; s < shops.length; s++) {
             n += shops[s].cookies[y];
+
         }
         y++;
         result += n;
         tdE4.textContent = n;
 
     }
+
     var tdE5 = document.createElement('td');
     tdE5.textContent = result;
     trE3.appendChild(tdE5);
@@ -143,6 +174,8 @@ var shop4 = new Shop('Paris', 20, 38, 2.3);
 console.log(shop4);
 var shop5 = new Shop('Lima', 2, 16, 4.6);
 console.log(shop5);
+//  myShop.shop6 = new Shop (ShopObj.location, ShopObj.min,ShopObj.max, ShopObj.avg);
+// console.log(shop6);
 
 
 
@@ -160,4 +193,52 @@ for (var r = 0; r < shops.length; r++) {
 }
 TableData();
 TableFooter();
+
+/////////////////////////////////////////////
+
+var myShop = document.getElementById('shop');
+myShop.addEventListener('submit', function (event) {
+    event.preventDefault();
+    console.log(event);
+    console.log(event.target);
+    var location = event.target.location.value;
+    console.log(location);
+    var minCustomer = event.target.min.value;
+    console.log(minCustomer);
+    var maxCustomer = event.target.max.value;
+    console.log(maxCustomer);
+    var avg = event.target.avg.value;
+    console.log(avg);
+    var ShopObj = new Shop(location, minCustomer, maxCustomer, avg);
+
+
+
+
+    if (event.target.max.value <= event.target.min.value) {
+        alert("you should try to put max num bigger than min num");
+
+    }
+    var shop6 = new Shop();
+    TableHeader();
+    ShopObj.avgCustomer();
+    ShopObj.cookiesRandom();
+    ShopObj.cookiesSum();
+    ShopObj.render();
+    TableData();
+    TableFooter();
+
+
+
+
+
+    myShop.reset();
+
+})
+
+
+
+
+
+
+
 
