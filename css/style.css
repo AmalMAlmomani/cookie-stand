@@ -1,5 +1,5 @@
-/* 
-table {
+
+/* table {
     border: 7px solid black;
     text-align: center;
     font-family: 'Shadows Into Light';
@@ -17,8 +17,8 @@ td,tr  {
     text-align: center;
     padding: 5px;
     
-}
-div.gallery {
+} */
+/*div.gallery {
     margin: 5px;
     border: 10px solid black;
     float: right;
@@ -52,9 +52,9 @@ h1 ,h4 {
 
 }
 
-/* p{
+p{
     font-family: 'Shadows Into Light';
-} */
+}
 
 section {
     
@@ -102,3 +102,4 @@ h3{
     
 
 }  */
+

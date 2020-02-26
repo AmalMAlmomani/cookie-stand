@@ -5,29 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Indie+Flower|Shadows+Into+Light&display=swap');
     </style>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Knewave|Shadows+Into+Light&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Knewave|Shadows+Into+Light|Yeon+Sung&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-
+    
     <header>
         <a href="sales.html">Sales</a></header>
-    <h1>
+        <div id="sales" >
+    <main>
+        <form id='shop'>
+            <img src="chinook.jpg" alt="chinook">
+            <fieldset>
+                <legend> Shops location </legend>
+                <hr>
+                <label for="location">Location: </label>
+                <input type="text" id="location"  >
+                <hr>
+                <label for="min">minCustomer:</label>
+                <input type="number" id="min"  placeholder="0" min="0">
+                <hr>
+                <label for="max">maxCustomer:</label>
+                <input type="number" id="max" placeholder="0" min="0">
+                <hr>
+                <label for="avg">Avg:</label>
+                <input type="float" placeholder="0.0" step="0.0" id="avg">
+                <hr>
+                <label for="RandomCus" hidden></label>
+                <input type="text" id="RandomCus" hidden>
+
+                <label for="cookiesAvg" hidden></label>
+                <input type="text" id="cookiesAvg" hidden>
+
+
+                <input type="submit">
+
+            </fieldset>
+        </form>
+    </main>
+
+
+
+</div>
+
+    <!-- <h1>
         Shops
     </h1>
+ -->
 
-
-    <section>
+    <!-- <section>
         <h4>Location:</h4>
         <ol type="1">
             <li>Seattle <a href="https://www.google.com/maps/place/Seattle,+WA,+USA/@47.6129432,-122.4821475,11z/data=!3m1!4b1!4m5!3m4!1s0x5490102c93e83355:0x102565466944d59a!8m2!3d47.6062095!4d-122.3320708">address</a></li>
@@ -76,8 +112,9 @@
     <footer>
         <p>Contact information: <a href="mailto:shops@example.com">shops@gmail.com</a>.</p>
 
-    </footer>
-
+    </footer> -->
+    <script src="js/app.js">
+    </script>
 </body>
 
 </html>
