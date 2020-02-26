@@ -1,7 +1,104 @@
 
-table{
-    border: 1px solid black;
+table {
+    border: 7px solid black;
+    text-align: center;
+    font-family: 'Shadows Into Light';
+    padding: 6px;
+    margin: 25px 25px 25px 25px;
+    font-size: x-large;
+    background-color: rgb(172, 151, 154);
+    border-collapse: collapse;
+    margin-left:auto; 
+     margin-right:auto;  
+    
 }
 td,tr  {
-    border: 1px solid rebeccapurple;
+    border : 2px solid black;
+    text-align: center;
+    padding: 5px;
+    
 }
+div.gallery {
+    margin: 5px;
+    border: 10px solid black;
+    float: right;
+    width: 180px;
+    
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+    float: center;
+    
+  }
+  body {
+    background-color: rgba(65, 63, 63, 0.534);
+    text-align: left;
+    background-image: url(https://i.ytimg.com/vi/rdGhwe1Q6LY/maxresdefault.jpg);
+   
+}
+h1 ,h4 {
+    position: static;
+    font-weight: bold;
+    border: 3px double;
+    font-size: 100px;
+    background-color: lightslategrey;
+    font-family: 'Indie Flower';
+    font-size: 60px ;
+    text-align: center;
+    margin: 5px 250px 25px 250px;
+    padding: 25px 25px 25px 25px  ;
+
+}
+
+/* p{
+    font-family: 'Shadows Into Light';
+} */
+
+section {
+    
+    font-size: 25px;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 5px 1px 5px 1px;
+    margin: 150px 5px 50px 5px;
+    padding: 25px 50px 75px 100px;
+   color: black;
+   background-color: rgb(172, 151, 154);
+  
+   
+   
+}
+h3{
+    font-family: 'Knewave';
+}
+
+ ul {
+     list-style-type: disc;
+     font-family: 'Yeon Sung';
+   
+    
+    }
+
+ ol {
+     list-style-type: decimal;
+     font-family: 'Yeon Sung';
+ }
+
+  footer{
+  text-align: center;
+  height: 30px;
+  padding: 5px;
+  margin: 10px 0px 0px 0px;
+  display: block;
+  position: static;
+    
+    border: 3px double;
+    background-color: lightslategrey;
+    font-family: 'Indie Flower';
+    font-size: 25px ;
+    
+    
+
+} 
