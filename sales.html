@@ -22,13 +22,42 @@
 <body>
 
     <header><a href="index.html">home page</a></header>
-
-
+   
     <div id="sales" >
-        
+  
+
+    <main>
+        <form id='shop'>
+            <img src="images/chinook.jpg" alt="chinook">
+            <fieldset>
+                <legend> Shops location </legend>
+                <hr>
+                <label for="location">Location: </label>
+                <input type="text" id="location" required >
+                <hr>
+                <label for="min">minCustomer:</label>
+                <input type="number" id="min"  placeholder="0" min="0" required>
+                <hr>
+                <label for="max">maxCustomer:</label>
+                <input type="number" id="max" placeholder="0" min="0" required>
+                <hr>
+                <label for="avg">Avg:</label>
+                <input type="float" placeholder="0.0" step="0.0" id="avg" required>
+                <hr>
+              
 
 
-    </div>
+                <input type="submit">
+
+            </fieldset>
+        </form>
+    </main>
+
+  </div>
+
+
+
+
     <script src="js/app.js">
     </script>
 </body>

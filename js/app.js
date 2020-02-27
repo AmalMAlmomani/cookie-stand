@@ -50,20 +50,22 @@ Shop.prototype.cookiesSum = function () {
 
 
 var tableE1 = document.createElement('table');
-
-Shop.prototype.render = function () {
-    var container = document.getElementById('sales');
+  var container = document.getElementById('sales');
     container.appendChild(tableE1);
     var trE1 = document.createElement('tr');
     tableE1.appendChild(trE1);
     var thE1 = document.createElement('th');
     trE1.appendChild(thE1);
+
+Shop.prototype.render = function () {
+  
     //thE1.textContent = myShop.ShopObj;
     // var trE5 = document.createElement('tr');
     // tableE1.appendChild(trE5);
     // var tdE7 = document.createElement('td');
     // trE5.appendChild(tdE7);
     // tdE7.textContent = `${myShop.ShopObj}`;
+
 }
 
 function TableData() {
@@ -117,6 +119,7 @@ function TableHeader() {
 
 
 function TableFooter() {
+
     var trE3 = document.createElement('tr');
     tableE1.appendChild(trE3);
     var tdE4 = document.createElement('td');
@@ -174,8 +177,6 @@ var shop4 = new Shop('Paris', 20, 38, 2.3);
 console.log(shop4);
 var shop5 = new Shop('Lima', 2, 16, 4.6);
 console.log(shop5);
-//  myShop.shop6 = new Shop (ShopObj.location, ShopObj.min,ShopObj.max, ShopObj.avg);
-// console.log(shop6);
 
 
 
@@ -203,35 +204,39 @@ myShop.addEventListener('submit', function (event) {
     console.log(event.target);
     var location = event.target.location.value;
     console.log(location);
-    var minCustomer = event.target.min.value;
+    var minCustomer = parseInt(event.target.min.value);
     console.log(minCustomer);
-    var maxCustomer = event.target.max.value;
+    var maxCustomer = parseInt( event.target.max.value);
     console.log(maxCustomer);
-    var avg = event.target.avg.value;
+    var avg = parseFloat( event.target.avg.value) ;
     console.log(avg);
     var ShopObj = new Shop(location, minCustomer, maxCustomer, avg);
+//var shop6 = new Shop();
 
 
 
-
-    if (event.target.max.value <= event.target.min.value) {
+    if (event.target.max.value < event.target.min.value) {
         alert("you should try to put max num bigger than min num");
+       
 
-    }
-    var shop6 = new Shop();
-    TableHeader();
+    }else
+
+    {
+    
     ShopObj.avgCustomer();
     ShopObj.cookiesRandom();
     ShopObj.cookiesSum();
+    tableE1.innerHTML= ' ';
+    TableHeader();
     ShopObj.render();
     TableData();
     TableFooter();
 
+}
 
 
-
-
-    myShop.reset();
+    
+     myShop.reset();
 
 })
 
